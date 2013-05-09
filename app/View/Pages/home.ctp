@@ -24,6 +24,7 @@ body {
 		width:90%;
 		float:left;
 		
+		
 	}
 	
 	
@@ -35,16 +36,13 @@ body {
 		margin-right:auto;
 		margin-top:28%;
 		height:200px;
-		-webkit-border-radius: 50px;
-		-moz-border-radius: 50px;
-		border-radius: 50px;	
+	
 	}
 	
 	#aUno
 	{
-		-webkit-border-radius: 50px 50px 0px 0px;
-		-moz-border-radius: 50px 50px 0px 0px;
-		border-radius: 50px 50px 0px 0px;
+	
+		margin-right:10px;
 
 	
 	}
@@ -59,9 +57,7 @@ body {
 #aDos
 	{
 
--webkit-border-radius: 50px 50px 0px 0px;
--moz-border-radius: 50px 50px 0px 0px;
-border-radius: 50px 50px 0px 0px;
+
 
 	
 	}
@@ -69,9 +65,6 @@ border-radius: 50px 50px 0px 0px;
 	{
 	
 
--webkit-border-radius: 50px 50px 0px 0px;
--moz-border-radius: 50px 50px 0px 0px;
-border-radius: 50px 50px 0px 0px;
 	
 
 	
@@ -79,10 +72,8 @@ border-radius: 50px 50px 0px 0px;
 	
 	#aContent
 	{
-	-webkit-border-radius: 50px 50px 0px 0px;
--moz-border-radius: 50px 50px 0px 0px;
-border-radius: 50px 50px 0px 0px;
-background: rgba(0,0,0,0) !important;
+
+background: rgba(84,88,91,1) !important;
 border:0px;
 
 	}
