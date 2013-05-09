@@ -71,7 +71,7 @@ fondos[9] = "b10.jpg";
 </style>
 
 	<div id="prueba" class="login users form">
-	<?php echo $this->Session->flash('auth'); ?>
+	<?php //echo $this->Session->flash('auth'); ?>
 	<?php echo $this->Form->create('User'); ?>
 	    <fieldset>
 	        <legend><?php echo __('Please enter your e-mail and password'); ?></legend>

@@ -19,6 +19,14 @@ body {
     	z-index: -5000;
 	}
 	
+	#uno {
+		background:rgba(200,213,22,0.2);
+		width:90%;
+		float:left;
+		
+	}
+	
+	
 	#content
 	{
 		background-color: rgba(255,207,0,0.6);
@@ -32,28 +40,51 @@ body {
 		border-radius: 50px;	
 	}
 	
-	#uno
+	#aUno
 	{
-	display:inline-block;
-vertical-align:top;
+		-webkit-border-radius: 50px 50px 0px 0px;
+		-moz-border-radius: 50px 50px 0px 0px;
+		border-radius: 50px 50px 0px 0px;
 
 	
 	}
-
-#dos
+	
+	.ui-state-active
 	{
-	display:inline-block;
-vertical-align:top;
+		background:rgba(200,213,22,0.2) !important;
+		border:0px;
+	}
+	
+
+#aDos
+	{
+
+-webkit-border-radius: 50px 50px 0px 0px;
+-moz-border-radius: 50px 50px 0px 0px;
+border-radius: 50px 50px 0px 0px;
+
 	
 	}
-	#tres
+	#aTres
 	{
 	
-	display:inline-block;
-vertical-align:top;
+
+-webkit-border-radius: 50px 50px 0px 0px;
+-moz-border-radius: 50px 50px 0px 0px;
+border-radius: 50px 50px 0px 0px;
 	
 
 	
+	}
+	
+	#aContent
+	{
+	-webkit-border-radius: 50px 50px 0px 0px;
+-moz-border-radius: 50px 50px 0px 0px;
+border-radius: 50px 50px 0px 0px;
+background: rgba(0,0,0,0) !important;
+border:0px;
+
 	}
 
 </style>
@@ -66,14 +97,14 @@ $(function() {
 
 </script>
 
-<ul>
-    <li><a href="#uno">Nunc tincidunt</a></li>
-    <li><a href="#dos">Proin dolor</a></li>
-    <li><a href="#tres">Aenean lacinia</a></li>
+<ul id="aContent">
+    <li id="aUno"><a href="#uno" >Login</a></li>
+    <li id="aDos"><a href="#dos" >Proin dolor</a></li>
+    <li id="aTres"><a href="#tres" >Aenean lacinia</a></li>
   </ul>
 <div id="uno" class="login users form">
 
-	<?php echo $this->Session->flash('auth'); ?>
+	<?php //echo $this->Session->flash('auth'); ?>
 	<?php echo $this->Form->create('User'); ?>
 	    <fieldset>
 	        <legend><?php echo __('Please enter your e-mail and password'); ?></legend>
