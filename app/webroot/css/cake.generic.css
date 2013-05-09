@@ -286,7 +286,7 @@ fieldset fieldset div {
 form div {
 	clear: both;
 	margin-bottom: 1em;
-	padding: .5em;
+	padding: .1em;
 	vertical-align: text-top;
 }
 form .input {
@@ -307,7 +307,7 @@ form div.submit {
 }
 label {
 	display: block;
-	font-size: 110%;
+	font-size: 90%;
 	margin-bottom:3px;
 }
 input, textarea {
@@ -315,7 +315,7 @@ input, textarea {
 	font-size: 140%;
 	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
 	padding: 1%;
-	width:98%;
+	width:50%;
 }
 select {
 	clear: both;

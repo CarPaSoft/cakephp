@@ -36,7 +36,7 @@ class AppController extends Controller {
 	public $components = array(
 			'Session',
 			'Auth' => array(
-					'loginAction' => array('controller' => 'users', 'action' => 'login'),
+					'loginAction' => array('controller' => 'pages', 'action' => 'home'),
 					'loginRedirect' => array('controller' => 'profiles', 'action' => 'home'),
 					'logoutRedirect' => array('controller' => 'users', 'action' => 'logout')
 			),
@@ -44,7 +44,7 @@ class AppController extends Controller {
 	);
 	
 	public function beforeFilter() {
-		$this->Auth->allow('index');
+		$this->Auth->allow('home');
 	}
 	
 }
