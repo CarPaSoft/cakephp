@@ -23,8 +23,6 @@ body {
 		background:rgba(200,213,22,0.2);
 		width:90%;
 		float:left;
-		
-		
 	}
 	
 	
@@ -96,7 +94,7 @@ $(function() {
 <div id="uno" class="login users form">
 
 	<?php //echo $this->Session->flash('auth'); ?>
-	<?php echo $this->Form->create('User'); ?>
+	<?php echo $this->Form->create('User', array('action' => 'login')); ?>
 	    <fieldset>
 	        <legend><?php echo __('Please enter your e-mail and password'); ?></legend>
 	        <?php echo $this->Form->input('username');
@@ -105,7 +103,6 @@ $(function() {
 	    </fieldset>
 	<?php echo $this->Form->end(__('Login')); ?>
 </div>
-
 
 <div id="dos">yeah</div>
 <div id="tres">ejiow</div>
