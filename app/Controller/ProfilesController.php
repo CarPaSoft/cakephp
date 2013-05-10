@@ -35,8 +35,9 @@ class ProfilesController extends AppController {
 	public function home()
 	{
 		$id = $this->Auth->user('id');
+		
 		if (!$this->Profile->User->exists($id)) {
-			throw new NotFoundException(__('Invalid profile'));
+			throw new NotFoundException(__('Invalid profile' . $id));
 		}
 		else
 		{

@@ -23,7 +23,6 @@ body {
 		background:rgba(200,213,22,0.2);
 		width:90%;
 		float:left;
-		
 	}
 	
 	
@@ -35,16 +34,13 @@ body {
 		margin-right:auto;
 		margin-top:28%;
 		height:200px;
-		-webkit-border-radius: 50px;
-		-moz-border-radius: 50px;
-		border-radius: 50px;	
+	
 	}
 	
 	#aUno
 	{
-		-webkit-border-radius: 50px 50px 0px 0px;
-		-moz-border-radius: 50px 50px 0px 0px;
-		border-radius: 50px 50px 0px 0px;
+	
+		margin-right:10px;
 
 	
 	}
@@ -59,9 +55,13 @@ body {
 	#aDos
 	{
 
+<<<<<<< HEAD
 		-webkit-border-radius: 50px 50px 0px 0px;
 		-moz-border-radius: 50px 50px 0px 0px;
 		border-radius: 50px 50px 0px 0px;
+=======
+
+>>>>>>> carlos
 
 	
 	}
@@ -69,9 +69,12 @@ body {
 	{
 	
 
+<<<<<<< HEAD
 		-webkit-border-radius: 50px 50px 0px 0px;
 		-moz-border-radius: 50px 50px 0px 0px;
 		border-radius: 50px 50px 0px 0px;
+=======
+>>>>>>> carlos
 	
 
 	
@@ -79,11 +82,17 @@ body {
 	
 	#aContent
 	{
+<<<<<<< HEAD
 		-webkit-border-radius: 50px 50px 0px 0px;
 		-moz-border-radius: 50px 50px 0px 0px;
 		border-radius: 50px 50px 0px 0px;
 		background: rgba(0,0,0,0) !important;
 		border:0px;
+=======
+
+background: rgba(84,88,91,1) !important;
+border:0px;
+>>>>>>> carlos
 
 	}
 
@@ -105,7 +114,7 @@ $(function() {
 <div id="uno" class="login users form">
 
 	<?php //echo $this->Session->flash('auth'); ?>
-	<?php echo $this->Form->create('User'); ?>
+	<?php echo $this->Form->create('User', array('action' => 'login')); ?>
 	    <fieldset>
 	        <legend><?php echo __('Please enter your e-mail and password'); ?></legend>
 	        <?php echo $this->Form->input('username');
@@ -114,7 +123,6 @@ $(function() {
 	    </fieldset>
 	<?php echo $this->Form->end(__('Login')); ?>
 </div>
-
 
 <div id="dos">yeah</div>
 <div id="tres">ejiow</div>
