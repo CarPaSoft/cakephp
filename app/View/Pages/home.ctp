@@ -1,6 +1,6 @@
 
 <?php
-  $bg = array('b1.jpg', 'b2.jpg', 'b3.jpg', 'b4.jpg', 'b5.jpg', 'b6.jpg', 'b7.jpg','b8.jpg','b9.jpg','b10.jpg' ); // array of filenames
+  $bg = array('b1.jpg', 'b2.jpg', 'b3.jpg', 'b4.jpg', 'b5.jpg', 'b6.jpg', 'b7.jpg','b8.jpg','b9.jpg','b10.jpg','b11.jpg' ); // array of filenames
   $i = rand(0, count($bg)-1); // generate random number size of the array
   $selectedBg = $bg[$i]; // set variable equal to which random filename was chosen
 ?>
@@ -56,12 +56,12 @@ body {
 	}
 	
 
-#aDos
+	#aDos
 	{
 
--webkit-border-radius: 50px 50px 0px 0px;
--moz-border-radius: 50px 50px 0px 0px;
-border-radius: 50px 50px 0px 0px;
+		-webkit-border-radius: 50px 50px 0px 0px;
+		-moz-border-radius: 50px 50px 0px 0px;
+		border-radius: 50px 50px 0px 0px;
 
 	
 	}
@@ -69,9 +69,9 @@ border-radius: 50px 50px 0px 0px;
 	{
 	
 
--webkit-border-radius: 50px 50px 0px 0px;
--moz-border-radius: 50px 50px 0px 0px;
-border-radius: 50px 50px 0px 0px;
+		-webkit-border-radius: 50px 50px 0px 0px;
+		-moz-border-radius: 50px 50px 0px 0px;
+		border-radius: 50px 50px 0px 0px;
 	
 
 	
@@ -79,11 +79,11 @@ border-radius: 50px 50px 0px 0px;
 	
 	#aContent
 	{
-	-webkit-border-radius: 50px 50px 0px 0px;
--moz-border-radius: 50px 50px 0px 0px;
-border-radius: 50px 50px 0px 0px;
-background: rgba(0,0,0,0) !important;
-border:0px;
+		-webkit-border-radius: 50px 50px 0px 0px;
+		-moz-border-radius: 50px 50px 0px 0px;
+		border-radius: 50px 50px 0px 0px;
+		background: rgba(0,0,0,0) !important;
+		border:0px;
 
 	}
 
