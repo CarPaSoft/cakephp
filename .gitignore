@@ -5,3 +5,10 @@ app/tmp/*
 app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 !empty
+.DS_Store
+
+.DS_Store
+
+app/.DS_Store
+
+.gitignore

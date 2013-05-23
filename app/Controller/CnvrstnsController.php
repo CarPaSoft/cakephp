@@ -37,6 +37,7 @@ class CnvrstnsController extends AppController {
  *
  * @return void
  */
+	
  /*	
     array(
     'conditions' => array('Model.field' => $thisValue), //array of conditions
@@ -57,18 +58,75 @@ class CnvrstnsController extends AppController {
 			$prflId;
 			$perfil = $this->Cnvrstn->Profile->find('first',array('conditions' => array('Profile.user_id' => $this->Auth->user('id')),'fields' => array('Profile.id')));
 			$prflId = $perfil['Profile']['id'];
+			$date = date("Y-m-d H:i:s");
 			$this->Cnvrstn->create();
-			echo "echo";
-			if ()
+			
+			$data = array('profile_id' => $prflId,
+			'title' => $this->request->data('Cnvrstn.title'),
+			'created' => $date,
+			'allowadd' => true,
+			'count' => 1);
+			$fieldList = array('profile_id','title','created','allowadd','count');
+			if ($this->Cnvrstn->save($data,false,$fieldList))
 			{
 				
-				
-				
-				
-				
-				$this->Session->setFlash(__('The cnvrstn has been saved' . $this->request->data('message')));
-				$this->redirect(array('action' => 'index'));
-			} else {
+				$cnvrstnId = $this->Cnvrstn->id;
+				//ahora salvamos los usuarios de la conversacion
+				$data = array('cnvrstn_id' => $cnvrstnId,
+							'profile_id' => $prflId,
+							'status' => 0,
+							'lastview' => 1,
+							'created' => $date);
+				$fieldList = array('cnvrstn_id','profile_id','status','lastview','created');
+				$this->Cnvrstn->Cnvrstnusr->create();
+				if($this->Cnvrstn->Cnvrstnusr->save($data,false,$fieldList))
+				{
+					//Creamos un nuevo Cnvrstnusr para el destinatario
+					$this->Cnvrstn->Cnvrstnusr->create();
+					$data = array('cnvrstn_id' => $cnvrstnId,
+							'profile_id' => $this->request->data('Cnvrstn.profile_id'),
+							'status' => 0,
+							'lastview' => 1,
+							'created' => $date);
+					if($this->Cnvrstn->Cnvrstnusr->save($data,false,$fieldList))
+					{
+						$success = true;
+					}
+					else
+					{
+						$success = false;
+					}
+				}
+				if($success == true)
+				{
+					//ahora es el turno de el mensaje inicial
+					$data = array('cnvrstn_id' => $cnvrstnId,
+							'profile_id' => $prflId,
+							'message' => $this->request->data('Cnvrstn.message'),
+							'created' => date("Y-m-d H:i:s"));
+					$fieldList = array('cnvrstn_id','profile_id','message','created');
+					$this->Cnvrstn->Cnvrstnmssg->create();
+					
+					if($this->Cnvrstn->Cnvrstnmssg->save($data,false,$fieldList))
+					{
+						$this->Cnvrstn->saveField('lastmessageid', $this->Cnvrstn->Cnvrstnmssg->id);
+						$this->Session->setFlash(__('Conversación entablada') . "!");
+						$this->redirect(array('controller' => 'profiles', 'action' => 'home'));
+					}
+					else 
+					{
+						//hay que añadir un callback o algo para si falla aquí borrar la cnvrstn entera
+						$this->Session->setFlash(__('The cnvrstn could not be saved. Please, try again.'));
+					}
+				}
+				else
+				{
+					//hay que añadir un callback o algo para si falla aquí borrar la cnvrstn entera
+					$this->Session->setFlash(__('The cnvrstn could not be saved. Please, try again.'));
+				}
+			} 
+			else 
+			{
 				$this->Session->setFlash(__('The cnvrstn could not be saved. Please, try again.'));
 			}
 		}

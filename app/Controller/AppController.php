@@ -47,4 +47,20 @@ class AppController extends Controller {
 		$this->Auth->allow('home');
 	}
 	
+	public function beforeRender()
+	{
+		if($this->Auth->user('id') == false)
+		{
+			
+		}
+		else
+		{
+			//hacemos todo el tema que tengamos que hacer por el usuario
+			//mensajes, relacionados, proyectos y actualizaciones en 
+			//general de su barra de estado
+			//$cnvrstn = new Cnvrstn();
+			//$cnvrstn->findByProfileId();
+		}
+	}
+	
 }
