@@ -82,6 +82,134 @@ div.destinoAjax { margin:3px; width:16px;
 		</dd>
 	</dl>
 </div>
+<div class="profiles2">
+<h2><?php  echo __('Profile'); ?></h2>
+	<dl>
+		<div class="field">
+		<dt><?php echo __('Id'); ?></dt>
+		<dd>
+			<?php echo h($profile['Profile']['id']); ?>
+			&nbsp;
+		</dd>
+		</div>
+		<div class="field">
+		<dt><?php echo __('Usuario'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($profile['User']['id'], array('controller' => 'users', 'action' => 'view', $profile['User']['id'])); ?>
+			&nbsp;
+		</dd>
+		</div>
+		<div class="field">
+			<dt><?php echo __('Nombre'); ?></dt>
+			<dd>
+				<?php echo h($profile['Profile']['nombre']); ?>
+				&nbsp;
+			</dd>
+		</div>
+		<div class="field">
+			<dt><?php echo __('Apellidos'); ?></dt>
+			<dd class="apellidos">
+				<?php echo h($profile['Profile']['apellidos']); ?>
+				&nbsp;
+			</dd>
+		</div>
+		<dt><?php echo __('F Nac'); ?></dt>
+		<dd>
+			<?php echo h($profile['Profile']['f_nac']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Bio'); ?></dt>
+		<dd>
+			<?php echo h($profile['Profile']['bio']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('City'); ?></dt>
+		<dd>
+			<?php // echo $this->Html->link($profile['City']['nombre'], array('controller' => 'cities', 'action' => 'view', $profile['City']['id'])); ?>
+			 <?php echo h($profile['City']['nombre']); ?> 
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Sexo'); ?></dt>
+		<dd>
+			<?php echo h($profile['Profile']['sexo']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Country'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($profile['Country']['nombre'], array('controller' => 'countries', 'action' => 'view', $profile['Country']['id'])); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Job'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($profile['Job']['nombre'], array('controller' => 'jobs', 'action' => 'view', $profile['Job']['id'])); ?>
+			&nbsp;
+		</dd>
+	</dl>
+</div>
+<div class="profiles2">
+<h2><?php  echo __('Profile'); ?></h2>
+	<dl>
+		<div class="field">
+		<dt><?php echo __('Id'); ?></dt>
+		<dd>
+			<?php echo h($profile['Profile']['id']); ?>
+			&nbsp;
+		</dd>
+		</div>
+		<div class="field">
+		<dt><?php echo __('Usuario'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($profile['User']['id'], array('controller' => 'users', 'action' => 'view', $profile['User']['id'])); ?>
+			&nbsp;
+		</dd>
+		</div>
+		<div class="field">
+			<dt><?php echo __('Nombre'); ?></dt>
+			<dd>
+				<?php echo h($profile['Profile']['nombre']); ?>
+				&nbsp;
+			</dd>
+		</div>
+		<div class="field">
+			<dt><?php echo __('Apellidos'); ?></dt>
+			<dd class="apellidos">
+				<?php echo h($profile['Profile']['apellidos']); ?>
+				&nbsp;
+			</dd>
+		</div>
+		<dt><?php echo __('F Nac'); ?></dt>
+		<dd>
+			<?php echo h($profile['Profile']['f_nac']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Bio'); ?></dt>
+		<dd>
+			<?php echo h($profile['Profile']['bio']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('City'); ?></dt>
+		<dd>
+			<?php // echo $this->Html->link($profile['City']['nombre'], array('controller' => 'cities', 'action' => 'view', $profile['City']['id'])); ?>
+			 <?php echo h($profile['City']['nombre']); ?> 
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Sexo'); ?></dt>
+		<dd>
+			<?php echo h($profile['Profile']['sexo']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Country'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($profile['Country']['nombre'], array('controller' => 'countries', 'action' => 'view', $profile['Country']['id'])); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Job'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($profile['Job']['nombre'], array('controller' => 'jobs', 'action' => 'view', $profile['Job']['id'])); ?>
+			&nbsp;
+		</dd>
+	</dl>
+</div>
 <div class="related">
 	<?php if (!empty($profile['Language'])): ?>
 	<h3><?php echo __('Related Languages'); ?></h3>
@@ -98,11 +226,6 @@ div.destinoAjax { margin:3px; width:16px;
 		<tr>
 			<td><?php echo $language['nombre']; ?></td>
 			<td><?php echo $language['level']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'languages', 'action' => 'view', $language['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'languages', 'action' => 'edit', $language['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'languages', 'action' => 'delete', $language['id']), null, __('Are you sure you want to delete # %s?', $language['id'])); ?>
-			</td>
 		</tr>
 	<?php endforeach; ?>
 	</table>

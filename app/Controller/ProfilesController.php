@@ -69,6 +69,10 @@ class ProfilesController extends AppController {
 							'fields' => 'Prflsprjct.owner','Project.nombre'
 						)
 					);
+					
+			//Apartede los skills, lenguajes y proyectos del usuario
+			//hay que sacar los proyectos relacionados según sus inquietudes
+			//y gustos. 
 			$this->set('related', compact('skills','languages','projects'));
 			$this->set('profile', $this->Profile->find('first', $options));
 		}
@@ -96,8 +100,6 @@ class ProfilesController extends AppController {
 		if (!$this->Profile->exists($id)) {
 			throw new NotFoundException(__('Invalid profile'));
 		}
-		
-		
 		
 		
 		$options = array('conditions' => array('Profile.' . $this->Profile->primaryKey => $id));

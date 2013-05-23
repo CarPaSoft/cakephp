@@ -43,12 +43,21 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link(
+		<?php if(!$this->Session->read('Auth.User.id') == null) {
+			
+			echo "<div id='hdrPrfl'>" . $this->Html->link('Perfil', '/profiles/home', array('class' => 'button', 'target' => '_blank')) . "</div>";
+			
+			echo "<div id='hdrPrjct'>" . $this->Html->link('Proyectos', '/projects/home', array('class' => 'button', 'target' => '_blank')) . "</div>";
+			
+			echo "<div id='hdrLgt'>" . $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => 'logout', 'border' => '0')),
 					'/users/logout',
 					array('target' => '_self', 'escape' => false)
-				);
-			?>	</h1>
+				) . "</div>";
+			
+			
+		} ?>
+			
 		</div>
 		<div id="content">
 
@@ -56,13 +65,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => 'logout', 'border' => '0')),
-					'/users/logout',
-					array('target' => '_self', 'escape' => false)
-				);
-			?>
+		<div id="footer_container">
+			<div id="footer">
+				<?php echo $this->Html->link(
+						$this->Html->image('cake.power.gif', array('alt' => 'logout', 'border' => '0')),
+						'/users/logout',
+						array('target' => '_self', 'escape' => false)
+					);
+				?>
+			</div>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump');
