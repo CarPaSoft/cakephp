@@ -1,9 +1,11 @@
 <div class="profiles view">
-<h2><?php  echo __('Profile'); ?></h2>
+<h2><?php
+	echo implode(",",$profile);
+  echo __('Profile'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
-			<?php echo h($profile['Profile']['id']); ?>
+			<?php echo h($profile[0]['Profile']['id']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('User'); ?></dt>
