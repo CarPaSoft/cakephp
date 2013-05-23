@@ -23,13 +23,15 @@
 }
 
 /** General Style Info **/
-body {
+/*body {
 	background: #003d4c;
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	margin: 0;
-}
+}*/
+/* Reset body padding and margins */
+body { margin:0; padding:0; }
 a {
 	color: #003d4c;
 	text-decoration: underline;
@@ -105,11 +107,11 @@ p {
 	padding: 10px 20px 40px 20px;
 	overflow: auto;
 }
-#footer {
+/*#footer {
 	clear: both;
 	padding: 6px 10px;
 	text-align: right;
-}
+}*/
 
 /** containers **/
 div.form,
@@ -311,12 +313,15 @@ label {
 	margin-bottom:3px;
 }
 input, textarea {
-	clear: both;
-	font-size: 140%;
+	
+	font-size: 80%;
 	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
-	padding: 1%;
-	width:50%;
+	width:80%;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
 }
+
 select {
 	clear: both;
 	font-size: 120%;
@@ -738,3 +743,19 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
+
+
+/* Elementos añadidos por nosotros mismos. Todos desde aquí */
+
+
+#hdrPrfl{ float:left;}
+
+#hdrPrjct{float:right;}
+
+#hdrLgt{}
+
+/* Make Footer Sticky */
+#footer_container { background:#eee; border:1px solid #666; bottom:0; height:60px; left:0; position:fixed; width:100%; }
+#footer { line-height:60px; margin:0 auto; width:940px; text-align:center; }
+
+

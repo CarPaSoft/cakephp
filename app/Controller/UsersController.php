@@ -99,6 +99,9 @@ class UsersController extends AppController {
 					$this->User->Profile->create();
 					$this->User->Profile->set('user_id',$this->User->id);
 					$this->User->Profile->save();
+					$id = $this->User->id;
+        			$this->request->data['User'] = array_merge($this->request->data['User'], array('id' => $id));
+        			$this->Auth->login($this->request->data['User']);
 					$this->Session->setFlash(__('Bienvenido. Toma un anIddea'));
 					$this->redirect($this->Auth->redirect());
 				} else {
@@ -189,6 +192,8 @@ class UsersController extends AppController {
 			}
 		}
 	}
+	
+	
 	
 	public function logout() {
 		$this->redirect($this->Auth->logout());

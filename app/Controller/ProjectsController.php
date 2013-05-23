@@ -52,15 +52,23 @@ class ProjectsController extends AppController {
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
+		if ($this->request->is('post')) 
+		{
 			$this->Project->create();
 			if ($this->Project->save($this->request->data)) {
+				
+				
 				$this->Session->setFlash(__('The project has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The project could not be saved. Please, try again.'));
 			}
 		}
+		
+		$lenguas = $this->Project->Lngsprjct->Language->find('all');
+		$skills = $this->Project->Prjctsskll->Skill->find('all');
+		print_r($lenguas,"");
+		$this->set(compact('lenguas','skills'));
 	}
 
 /**
