@@ -14,7 +14,7 @@ $data = array(
 	'created' => date("Y-m-d H:i:s"),
 	'allowadd' => true,
 	'count' => 1),
-	'Cnvrstnusr' => array(array('cnvrstn_id' => ))
+	'Cnvrstnusr' => array(array('cnvrstn_id' => 8))
 	//Hay que mirar como salvar primero la conversación, para extraer la ID, 
 	//y luego poder añadir todos los campos de las tablas asociadas que se puedan.
-)
+);
