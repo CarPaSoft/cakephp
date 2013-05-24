@@ -10,7 +10,7 @@
 
 <style>
 body { 
-		background: url(/cakephp/img/<?php echo $selectedBg; ?>) no-repeat center center fixed; 
+		background: url(/cakephp/img/<?php echo $selectedBg; ?>) no-repeat center center fixed ; 
     	width: 100%;
     	height: 100%;
     	position: fixed;
@@ -19,83 +19,111 @@ body {
     	z-index: -5000;
 	}
 	
-	#uno {
-		background:rgba(200,213,22,0.2);
-		width:90%;
+	#uno 
+	{
+		background:rgba(56,45,39,1);
+		width:95%;
+		float:left;
+		height: 200px;
+	}
+	
+	#dos 
+	{
+		background:rgba(56,45,39,1);
+		width:95%;
+		height: 200px;
 		float:left;
 	}
 	
+	#tres 
+	{
+		background:rgba(56,45,39,1);
+		width:95%;
+		height: 200px;
+		float:left;
+	}
 	
 	#content
 	{
-		background-color: rgba(255,207,0,0.6);
-		width:90%;
+		width:100%;
 		margin-left:auto;
 		margin-right:auto;
 		margin-top:28%;
 		height:200px;
-	
+		padding: 0px !important;
+		background: none; 
+	    border-width: 0px; 
 	}
 	
-	#aUno
+	.ui-state-default
 	{
-	
-		margin-right:10px;
-
-	
+		background:rgba(252,206,12,1) !important;
+		border:0px;
+		color: rgba (56,45,39,1) !important;
 	}
 	
 	.ui-state-active
 	{
-		background:rgba(200,213,22,0.2) !important;
+		background:rgba(56,45,39,1) !important;
 		border:0px;
+		color: rgba (252,206,12,1) !important;
 	}
 	
-
-	#aDos
+	.ui-state-active a, .ui-state-active a:link
 	{
-
-<<<<<<< HEAD
-		-webkit-border-radius: 50px 50px 0px 0px;
-		-moz-border-radius: 50px 50px 0px 0px;
-		border-radius: 50px 50px 0px 0px;
-=======
-
->>>>>>> carlos
-
-	
+		color: #FCCE0C !important;
 	}
-	#aTres
+	
+		
+	#TabLogin
 	{
+		margin-left:30px;
+		-webkit-border-radius: 25px 25px 0px 0px;
+		-moz-border-radius: 25px 25px 0px 0px;
+		border-radius: 25px 25px 0px 0px;
+		padding: 0.3em 2.4em !important;
+		
+	}
 	
-
-<<<<<<< HEAD
-		-webkit-border-radius: 50px 50px 0px 0px;
-		-moz-border-radius: 50px 50px 0px 0px;
-		border-radius: 50px 50px 0px 0px;
-=======
->>>>>>> carlos
+	#TabJoin
+	{
+		-webkit-border-radius: 25px 25px 0px 0px;
+		-moz-border-radius: 25px 25px 0px 0px;
+		border-radius: 25px 25px 0px 0px;
+		padding: 0.3em 2.4em !important;
+		
+	}
 	
-
-	
+	#TabWeAre
+	{
+		-webkit-border-radius: 25px 25px 0px 0px;
+		-moz-border-radius: 25px 25px 0px 0px;
+		border-radius: 25px 25px 0px 0px;
+		padding: 0.3em 2.4em !important;
+		
 	}
 	
 	#aContent
 	{
-<<<<<<< HEAD
-		-webkit-border-radius: 50px 50px 0px 0px;
-		-moz-border-radius: 50px 50px 0px 0px;
-		border-radius: 50px 50px 0px 0px;
-		background: rgba(0,0,0,0) !important;
 		border:0px;
-=======
-
-background: rgba(84,88,91,1) !important;
-border:0px;
->>>>>>> carlos
-
+		background: rgba(0,0,0,0) !important;
+	}
+	
+	input 
+	{
+	    transition:.1s linear;
+	    -webkit-transition:.1s linear;
+	    -moz-transition:.1s linear;
 	}
 
+	input:focus 
+	{
+	    outline: none;
+	    box-shadow: 0px 0px 7px #fcce0c;
+	    border-color: #fcce0c; 
+	    content: " ";
+	}
+	
 </style>
 <script>
 $(function() {
@@ -107,23 +135,60 @@ $(function() {
 </script>
 
 <ul id="aContent">
-    <li id="aUno"><a href="#uno" >Login</a></li>
-    <li id="aDos"><a href="#dos" >Proin dolor</a></li>
-    <li id="aTres"><a href="#tres" >Aenean lacinia</a></li>
+    <li id="TabLogin"><a href="#uno" >Login</a></li>
+    <li id="TabJoin"><a href="#dos" >¡Únete!</a></li>
+    <li id="TabWeAre"><a href="#tres" >Nosotros Somos</a></li>
   </ul>
+  
+
+
 <div id="uno" class="login users form">
 
-	<?php //echo $this->Session->flash('auth'); ?>
+	<?php echo $this->Session->flash('auth'); ?>
 	<?php echo $this->Form->create('User', array('action' => 'login')); ?>
+<<<<<<< HEAD
 	    <fieldset>
 	        <?php echo $this->Form->input('username');
 	        echo $this->Form->input('password');
+=======
+	<fieldset>
+		<?php echo $this->Form->input('username',array('id' => 'UserLogin', 
+		'value' => 'ejemplo@aniddea.com', 'label' => false, 'onfocus' => 'this.value = ""'));
+	        echo $this->Form->input('password',array('id' => 'passwordLogin',
+	        'value' => 'password', 'label' => false, 'onfocus' => 'this.value = ""'));
+>>>>>>> origin/Pablo
 	    ?>
-	    </fieldset>
+	</fieldset>
 	<?php echo $this->Form->end(__('Login')); ?>
+	
 </div>
 
-<div id="dos">yeah</div>
+<div id="dos" class="add users form">
+
+	<?php echo $this->Form->create('User',array('action' => 'add')); ?>
+	<fieldset>
+		<?php
+		echo $this->Form->input('username', array('id' => 'AddUser',
+		'value' => 'ejemplo@aniddea.com', 'label' => false, 'onfocus' => 'this.value = ""'));
+		
+		echo $this->Form->input('password',array('id' => 'passwordLogin',
+	    'value' => 'password', 'label' => false, 'onfocus' => 'this.value = ""'));
+	?>
+	</fieldset>
+	<?php echo $this->Form->end(__('¡Únete!')); ?>
+<!--  
+	<?php //echo $this->Session->flash('auth'); ?>
+		<?php echo $this->Form->create('User', array('action' => 'login')); ?>
+		    <fieldset>
+		        <?php echo $this->Form->input('username',array('id' => 'UserLogin','value' => 'ejemplo@aniddea.com', 'label' => false));
+		        echo $this->Form->input('password',array('id' => 'passwordLogin','value' => 'password', 'label' => false));
+		    ?>
+		    </fieldset>
+		<?php echo $this->Form->end(__('Login')); ?>
+-->
+
+</div>
+
 <div id="tres">ejiow</div>
 <?php
 	

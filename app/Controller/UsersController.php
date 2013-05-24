@@ -103,7 +103,7 @@ class UsersController extends AppController {
         			$this->request->data['User'] = array_merge($this->request->data['User'], array('id' => $id));
         			$this->Auth->login($this->request->data['User']);
 					$this->Session->setFlash(__('Bienvenido. Toma un anIddea'));
-					$this->redirect($this->Auth->redirect());
+					$this->redirect($this->Auth->redirectUrl());
 				} else {
 					$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 				}
@@ -186,7 +186,7 @@ class UsersController extends AppController {
 			if ($this->Auth->login()) {
 				$this->User->set('ultimo_login',date('c'));
 				$this->Session->setFlash(__('Has pasado, a donde vas....'));
-				$this->redirect($this->Auth->redirect());
+				$this->redirect($this->Auth->redirectUrl());
 			} else {
 				$this->Session->setFlash(__('Invalid username or password, try again'));
 			}
