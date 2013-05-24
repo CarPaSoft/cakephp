@@ -144,7 +144,7 @@ $(function() {
 
 <div id="uno" class="login users form">
 
-	<?php //echo $this->Session->flash('auth'); ?>
+	<?php echo $this->Session->flash('auth'); ?>
 	<?php echo $this->Form->create('User', array('action' => 'login')); ?>
 	<fieldset>
 		<?php echo $this->Form->input('username',array('id' => 'UserLogin', 
@@ -159,7 +159,7 @@ $(function() {
 
 <div id="dos" class="add users form">
 
-	<?php //echo $this->Form->create('User'); ?>
+	<?php echo $this->Form->create('User',array('action' => 'add')); ?>
 	<fieldset>
 		<?php
 		echo $this->Form->input('username', array('id' => 'AddUser',
