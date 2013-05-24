@@ -72,6 +72,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 						'/users/logout',
 						array('target' => '_self', 'escape' => false)
 					);
+					echo sizeof($recentArticles);
+					echo array_values($recentArticles);
 				?>
 				
 			</div>

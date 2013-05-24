@@ -60,6 +60,9 @@ class AppController extends Controller {
 			//general de su barra de estado
 			//$cnvrstn = new Cnvrstn();
 			//$cnvrstn->findByProfileId();
+			$this->loadModel('Cnvrstn');
+			$recentArticles = $this->Cnvrstn->find('all', array('limit' => 5, 'order' => 'Cnvrstn.created DESC'));
+			$this->set(compact('recentArticles'));
 		}
 	}
 	

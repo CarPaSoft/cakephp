@@ -116,7 +116,7 @@ $(function() {
 	<?php //echo $this->Session->flash('auth'); ?>
 	<?php echo $this->Form->create('User', array('action' => 'login')); ?>
 	    <fieldset>
-	        <?php echo $this->Form->input('username');
+	        <?php echo $this->Form->input('username',array('value' => 'c@c.es','onfocus' => 'this.value = ""'));
 	        echo $this->Form->input('password');
 	    ?>
 	    </fieldset>

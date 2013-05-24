@@ -18,3 +18,5 @@ $data = array(
 	'Cnvrstnmssg' => array(array('cnvrstn_id' => $cnvrstnId)));
 	//Hay que mirar como salvar primero la conversación, para extraer la ID, 
 	//y luego poder añadir todos los campos de las tablas asociadas que se puedan.
+
+	

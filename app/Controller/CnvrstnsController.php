@@ -130,6 +130,7 @@ class CnvrstnsController extends AppController {
 				$this->Session->setFlash(__('The cnvrstn could not be saved. Please, try again.'));
 			}
 		}
+		
 		$profiles = $this->Cnvrstn->Profile->find('list');
 		$this->set(compact('profiles'));
 	}
