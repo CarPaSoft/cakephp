@@ -43,6 +43,19 @@ class AppController extends Controller {
 			'RequestHandler'
 	);
 	
+	/*
+	array(
+    'conditions' => array('Model.field' => $thisValue), //array of conditions
+    'recursive' => 1, //int
+    'fields' => array('Model.field1', 'DISTINCT Model.field2'), //array of field names
+    'order' => array('Model.created', 'Model.field3 DESC'), //string or array defining order
+    'group' => array('Model.field'), //fields to GROUP BY
+    'limit' => n, //int
+    'page' => n, //int
+    'offset' => n, //int
+    'callbacks' => true //other possible values are false, 'before', 'after'
+	*/
+	
 	public function beforeFilter() {
 		$this->Auth->allow('home');
 	}
@@ -58,10 +71,19 @@ class AppController extends Controller {
 			//hacemos todo el tema que tengamos que hacer por el usuario
 			//mensajes, relacionados, proyectos y actualizaciones en 
 			//general de su barra de estado
-			//$cnvrstn = new Cnvrstn();
-			//$cnvrstn->findByProfileId();
+			
 			$this->loadModel('Cnvrstn');
-			$recentArticles = $this->Cnvrstn->find('all', array('limit' => 5, 'order' => 'Cnvrstn.created DESC'));
+			
+			$prfl = $this->Cnvrstn->Profile->find('first',array('conditions' => array('Profile.user_id' => $this->Auth->user('id')),'fields' => array('id')));
+			$prflId = $prfl['Profile']['id'];
+			/*$prfl = $this->Cnvrstn->find('threaded', array(
+        	'fields' => array('id', 'name', 'parent_id')));*/
+			//echo json_encode( $prfl);
+			$this->Cnvrstn->Cnvrstusrs->find('all',array('conditions' => array('Cnvrstnusr.profile_id' => $prflId)));
+			
+			$recentArticles = $this->Cnvrstn->find('threaded', array('conditions' => array('Cnvrstn.profile_id' => $prflId)
+														,'limit' => 5, 'order' => 'Cnvrstn.created DESC'));
+			echo json_encode( $recentArticles);
 			$this->set(compact('recentArticles'));
 		}
 	}

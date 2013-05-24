@@ -110,6 +110,7 @@ class CnvrstnsController extends AppController {
 					if($this->Cnvrstn->Cnvrstnmssg->save($data,false,$fieldList))
 					{
 						$this->Cnvrstn->saveField('lastmessageid', $this->Cnvrstn->Cnvrstnmssg->id);
+						$this->Cnvrstn->saveField('profile_id', $prflId);
 						$this->Session->setFlash(__('Conversación entablada') . "!");
 						$this->redirect(array('controller' => 'profiles', 'action' => 'home'));
 					}
